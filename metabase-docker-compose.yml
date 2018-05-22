@@ -1,0 +1,23 @@
+version: '2'
+services:
+  metabase:
+    image: metabase/metabase
+    restart: always
+    ports:
+      - '3000:3000'
+    mem_limit: 512m
+    volumes:
+      - /root/metabase-data:/tmp
+    environment:
+      - MB_DB_FILE=/tmp/metabase.db
+  postgres:
+    image: postgres
+    restart: always
+    ports:
+      - '5432:5432'
+    volumes:
+      - /root/postgres-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=hugo
+      - POSTGRES_PASSWORD=Hugo1234
+      - POSTGRES_DB=caspian
