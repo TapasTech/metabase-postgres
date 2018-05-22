@@ -18,6 +18,3 @@ services:
     volumes:
       - /root/postgres-data:/var/lib/postgresql/data
     environment:
-      - POSTGRES_USER=hugo
-      - POSTGRES_PASSWORD=Hugo1234
-      - POSTGRES_DB=caspian
